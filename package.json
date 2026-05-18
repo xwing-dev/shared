@@ -1,0 +1,29 @@
+{
+  "name": "@xwing-dev/shared",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "description": "Shared package for tickets application",
+  "author": "pavel.kazlou.dev@gmail.com",
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "publish:prod": "npm run build && npm publish --access public"
+  },
+  "exports": {
+    ".": "./dist/index.js",
+    "./biome": "./biome.json"
+  },
+  "files": [
+    "dist",
+    "biome.json"
+  ],
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3"
+  }
+}
