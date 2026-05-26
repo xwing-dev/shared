@@ -15,9 +15,15 @@
     "generate:contracts": "npx protoc -I ./src/contracts/proto ./src/contracts/proto/*.proto --plugin=protoc-gen-ts_proto=./node_modules/.bin/protoc-gen-ts_proto --ts_proto_out=./src/contracts/gen --ts_proto_opt=nestJs=true,package=omit"
   },
   "exports": {
-    ".": "./dist/index.js",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
     "./biome": "./biome.json",
-    "./contracts": "./src/contracts"
+    "./contracts/gen/auth": {
+      "types": "./src/contracts/gen/auth.ts",
+      "import": "./src/contracts/gen/auth.js"
+    }
   },
   "files": [
     "dist",
