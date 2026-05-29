@@ -12,8 +12,7 @@ export const protobufPackage = "auth.v1";
 
 export interface SendOtpDto {
   identifier: string;
-  phone?: string | undefined;
-  email?: string | undefined;
+  type: string;
 }
 
 export interface SendOtpResponseDto {
