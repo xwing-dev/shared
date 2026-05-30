@@ -3,14 +3,26 @@ syntax = "proto3";
 package auth.v1;
 
 service AuthService {
-    rpc SendOtp(SendOtpDto) returns (SendOtpResponseDto);
+    rpc SendOtp(SendOtpRequestDto) returns (SendOtpResponseDto);
+    rpc VerifyOtp(VerifyOtpRequestDto) returns (VerifyOtpResponseDto);
 }
 
-message SendOtpDto {
+message SendOtpRequestDto {
     string identifier = 1;
     string type = 2;
 }
 
 message SendOtpResponseDto {
     string message = 1;
+}
+
+message VerifyOtpRequestDto {
+    string identifier = 1;
+    string type = 2;
+    string code = 3;
+}
+
+message VerifyOtpResponseDto {
+    string access_token = 1;
+    string refresh_token = 2;
 }
