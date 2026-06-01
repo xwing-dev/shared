@@ -21,12 +21,12 @@
     },
     "./biome": "./biome.json",
     "./contracts/gen/auth": {
-      "types": "./src/contracts/gen/auth.d.ts",
-      "import": "./src/contracts/gen/auth.js"
+      "types": "./dist/contracts/gen/auth.d.ts",
+      "import": "./dist/contracts/gen/auth.js"
     },
     "./exceptions/rpc": {
       "types": "./dist/exceptions/rpc/index.d.ts",
-      "import": "./src/exceptions/rpc/index.js"
+      "import": "./dist/exceptions/rpc/index.js"
     }
   },
   "files": [
