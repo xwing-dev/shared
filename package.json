@@ -23,6 +23,10 @@
     "./contracts/gen/auth": {
       "types": "./src/contracts/gen/auth.ts",
       "import": "./src/contracts/gen/auth.js"
+    },
+    "./exceptions/rpc": {
+      "types": "./src/exceptions/rpc/index.ts",
+      "import": "./src/exceptions/rpc/index.js"
     }
   },
   "files": [

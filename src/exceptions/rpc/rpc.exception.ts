@@ -10,7 +10,7 @@ export enum RpcDefaultMessages {
 	BAD_REQUEST = "Bad request",
 }
 
-export class BaseRpcException extends RpcException {
+class BaseRpcException extends RpcException {
 	constructor(code: RpcStatus, message: string, data?: any) {
 		super({ code, details: message, data });
 	}
