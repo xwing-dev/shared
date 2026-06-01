@@ -3,7 +3,6 @@
   "version": "1.0.11",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "type": "module",
   "description": "Shared package for tickets application",
   "author": "pavel.kazlou.dev@gmail.com",
   "license": "ISC",
@@ -17,16 +16,19 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
     },
     "./biome": "./biome.json",
     "./contracts/gen/auth": {
       "types": "./dist/contracts/gen/auth.d.ts",
-      "import": "./dist/contracts/gen/auth.js"
+      "import": "./dist/contracts/gen/auth.js",
+      "require": "./dist/contracts/gen/auth.js"
     },
     "./exceptions/rpc": {
       "types": "./dist/exceptions/rpc/index.d.ts",
-      "import": "./dist/exceptions/rpc/index.js"
+      "import": "./dist/exceptions/rpc/index.js",
+      "require": "./dist/exceptions/rpc/index.js"
     }
   },
   "files": [
