@@ -33,7 +33,8 @@
   },
   "files": [
     "dist",
-    "biome.json"
+    "biome.json",
+    "src/contracts/proto"
   ],
   "devDependencies": {
     "ts-node": "^10.9.2",
