@@ -21,20 +21,17 @@
     },
     "./biome": "./biome.json",
     "./contracts/gen/auth": {
-      "types": "./src/contracts/gen/auth.ts",
+      "types": "./src/contracts/gen/auth.d.ts",
       "import": "./src/contracts/gen/auth.js"
     },
     "./exceptions/rpc": {
-      "types": "./src/exceptions/rpc/index.ts",
+      "types": "./dist/exceptions/rpc/index.d.ts",
       "import": "./src/exceptions/rpc/index.js"
     }
   },
   "files": [
     "dist",
-    "biome.json",
-    "src/contracts/gen",
-    "src/contracts/proto",
-    "src/exceptions/rpc"
+    "biome.json"
   ],
   "devDependencies": {
     "ts-node": "^10.9.2",

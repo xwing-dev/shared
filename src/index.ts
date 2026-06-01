@@ -1,1 +1,2 @@
-export const hello = 'world';
+export * from './contracts/gen/auth';
+export * from './exceptions/rpc';
