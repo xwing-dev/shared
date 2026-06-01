@@ -39,7 +39,7 @@ jobs:
         run: yarn generate:contracts
 
       - name: Build
-        run: yarn build
+        run: rm -f tsconfig.tsbuildinfo dist/tsconfig.tsbuildinfo && yarn build
 
       - name: Publish to npm
         run: npm publish
