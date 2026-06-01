@@ -33,7 +33,8 @@
     "dist",
     "biome.json",
     "src/contracts/gen",
-    "src/contracts/proto"
+    "src/contracts/proto",
+    "src/exceptions/rpc"
   ],
   "devDependencies": {
     "ts-node": "^10.9.2",
