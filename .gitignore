@@ -12,3 +12,4 @@ build
 .eslintignore
 .eslintrc.js
 .eslintrc.json
+tsconfig.tsbuildinfo
