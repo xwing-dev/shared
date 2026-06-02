@@ -11,7 +11,7 @@
   },
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "generate:contracts": "npx protoc -I ./src/contracts/proto ./src/contracts/proto/*.proto --plugin=protoc-gen-ts_proto=./node_modules/.bin/protoc-gen-ts_proto --ts_proto_out=./src/contracts/gen --ts_proto_opt=nestJs=true,package=omit"
+    "generate:contracts": "npx protoc -I ./proto ./proto/*.proto --plugin=protoc-gen-ts_proto=\"$(npm root)/.bin/protoc-gen-ts_proto\" --ts_proto_out=./src/contracts/gen --ts_proto_opt=nestJs=true,package=omit"
   },
   "exports": {
     ".": {
@@ -34,7 +34,7 @@
   "files": [
     "dist",
     "biome.json",
-    "src/contracts/proto"
+    "proto"
   ],
   "devDependencies": {
     "@types/node": "^25.9.1",
