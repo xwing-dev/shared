@@ -30,12 +30,23 @@ export interface VerifyOtpResponseDto {
   refreshToken: string;
 }
 
+export interface RefreshRequestDto {
+  refreshToken: string;
+}
+
+export interface RefreshResponseDto {
+  accessToken: string;
+  refreshToken: string;
+}
+
 export const AUTH_V1_PACKAGE_NAME = "auth.v1";
 
 export interface AuthServiceClient {
   sendOtp(request: SendOtpRequestDto): Observable<SendOtpResponseDto>;
 
   verifyOtp(request: VerifyOtpRequestDto): Observable<VerifyOtpResponseDto>;
+
+  refresh(request: RefreshRequestDto): Observable<RefreshResponseDto>;
 }
 
 export interface AuthServiceController {
@@ -46,11 +57,15 @@ export interface AuthServiceController {
   verifyOtp(
     request: VerifyOtpRequestDto,
   ): Promise<VerifyOtpResponseDto> | Observable<VerifyOtpResponseDto> | VerifyOtpResponseDto;
+
+  refresh(
+    request: RefreshRequestDto,
+  ): Promise<RefreshResponseDto> | Observable<RefreshResponseDto> | RefreshResponseDto;
 }
 
 export function AuthServiceControllerMethods() {
   return function (constructor: Function) {
-    const grpcMethods: string[] = ["sendOtp", "verifyOtp"];
+    const grpcMethods: string[] = ["sendOtp", "verifyOtp", "refresh"];
     for (const method of grpcMethods) {
       const descriptor: any = Reflect.getOwnPropertyDescriptor(constructor.prototype, method);
       GrpcMethod("AuthService", method)(constructor.prototype[method], method, descriptor);
