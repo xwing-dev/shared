@@ -2,10 +2,16 @@ syntax = "proto3";
 
 package auth.v1;
 
+import "google/protobuf/empty.proto";
+
 service AuthService {
     rpc SendOtp(SendOtpRequestDto) returns (SendOtpResponseDto);
     rpc VerifyOtp(VerifyOtpRequestDto) returns (VerifyOtpResponseDto);
     rpc Refresh(RefreshRequestDto) returns (RefreshResponseDto);
+
+    rpc TelegramInit(google.protobuf.Empty) returns (TelegramInitResponseDto);
+    rpc TelegramVerify(TelegramVerifyRequestDto) returns (TelegramVerifyResponseDto);
+
 }
 
 message SendOtpRequestDto {
@@ -35,4 +41,20 @@ message RefreshRequestDto {
 message RefreshResponseDto {
     string access_token = 1;
     string refresh_token = 2;
+}
+
+message TelegramInitResponseDto {
+    string url = 1;
+}
+
+message TelegramVerifyRequestDto {
+    map<string, string> query = 1;
+}
+
+message TelegramVerifyResponseDto {
+    oneof result {
+        string url = 1;
+        string access_token = 2;
+        string refresh_token = 3;
+    }
 }
