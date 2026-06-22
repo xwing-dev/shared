@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package users.v1;
+
+service UsersService {
+    rpc GetMe(GetMeRequestDto) returns (GetMeResponseDto);
+
+    rpc CreateUser(CreateUserRequestDto) returns (CreateUserResponseDto);
+}
+
+message GetMeRequestDto {
+    string id = 1;
+}
+
+message GetMeResponseDto {
+    User user = 1;
+}
+
+message CreateUserRequestDto {
+    string id = 1;
+}
+
+message CreateUserResponseDto {
+    bool ok = 1;
+}
+
+message User {
+    optional string id = 1;
+    optional string name = 2;
+    optional string email = 3;
+    optional string phone = 4;
+    optional string avatar = 5;
+}
