@@ -11,3 +11,4 @@ export {
 } from './contracts/gen/account';
 export * from './contracts/proto/paths';
 export * from './exceptions/rpc';
+export * from './events';

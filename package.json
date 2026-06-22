@@ -29,6 +29,11 @@
       "types": "./dist/exceptions/rpc/index.d.ts",
       "import": "./dist/exceptions/rpc/index.js",
       "require": "./dist/exceptions/rpc/index.js"
+    },
+    "./events": {
+      "types": "./dist/events/index.d.ts",
+      "import": "./dist/events/index.js",
+      "require": "./dist/events/index.js"
     }
   },
   "files": [
