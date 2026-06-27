@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package movie.v1;
+
+import "google/protobuf/timestamp.proto";
+
+service MovieService {
+    rpc ListMovies(ListMoviesRequestDto) returns (ListMoviesResponseDto);
+    rpc GetMovie(GetMovieRequestDto) returns (GetMovieResponseDto);
+}
+
+message ListMoviesRequestDto {
+    string category= 1;
+    bool random = 2;
+    int32 limit = 3;
+}
+
+message ListMoviesResponseDto {
+    repeated Movie movies = 1;
+}
+
+message Movie {
+    string id = 1;
+    string title = 2;
+    string slug = 3;
+    string poster = 4;
+    string rating_age = 5;
+    google.protobuf.Timestamp release_date = 6;
+}
+
+message GetMovieRequestDto {
+    oneof request {
+        string slug = 1;
+        string id = 2;
+    }
+}
+
+message MovieDetails {
+    string id = 1;
+    string title = 2;
+    string slug = 3;
+    string poster = 4;
+    string rating_age = 5;
+    google.protobuf.Timestamp release_date = 6;
+    string description = 7;
+    string banner = 8;
+    string country = 9;
+    string duration = 10;
+}
+
+message GetMovieResponseDto {
+    MovieDetails movie = 1;
+}
