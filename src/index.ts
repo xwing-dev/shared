@@ -37,5 +37,5 @@ export {
 	CategoryServiceClient,
 	CategoryServiceController,
 	CategoryServiceControllerMethods,
-	CATEGORY_V1_PACKAGE_NAME,
+	CATEGORY_SERVICE_NAME,
 } from './contracts/gen/category';
