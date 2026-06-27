@@ -22,3 +22,15 @@ export {
 	UsersServiceControllerMethods,
 	USERS_SERVICE_NAME,
 } from './contracts/gen/users';
+export {
+	MovieServiceClient,
+	MovieServiceController,
+	MovieServiceControllerMethods,
+	MOVIE_SERVICE_NAME,
+} from './contracts/gen/movie';
+export {
+	CategoryServiceClient,
+	CategoryServiceController,
+	CategoryServiceControllerMethods,
+	CATEGORY_SERVICE_NAME,
+} from './contracts/gen/category';
