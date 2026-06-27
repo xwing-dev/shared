@@ -23,14 +23,19 @@ export {
 	USERS_SERVICE_NAME,
 } from './contracts/gen/users';
 export {
+	ListMoviesRequestDto,
+	ListMoviesResponseDto,
+	GetMovieRequestDto,
+	GetMovieResponseDto,
 	MovieServiceClient,
 	MovieServiceController,
 	MovieServiceControllerMethods,
 	MOVIE_SERVICE_NAME,
 } from './contracts/gen/movie';
 export {
+	GetCategoriesResponseDto,
 	CategoryServiceClient,
 	CategoryServiceController,
 	CategoryServiceControllerMethods,
-	CATEGORY_SERVICE_NAME,
+	CATEGORY_V1_PACKAGE_NAME,
 } from './contracts/gen/category';
